@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 echo "1. PHP MASUK<br>";
 
 require __DIR__.'/../vendor/autoload.php';
@@ -10,8 +12,10 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 echo "3. LARAVEL BERHASIL BOOTSTRAP<br>";
 
-$app->handleRequest(
-    Illuminate\Http\Request::capture()
-);
+$request = Request::capture();
 
-echo "4. REQUEST SELESAI";
+echo "4. REQUEST BERHASIL DIBUAT<br>";
+
+$response = $app->handleRequest($request);
+
+echo "5. HANDLE REQUEST SELESAI<br>";
