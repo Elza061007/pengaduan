@@ -1,13 +1,17 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
-
-define('LARAVEL_START', microtime(true));
+echo "1. PHP MASUK<br>";
 
 require __DIR__.'/../vendor/autoload.php';
 
-/** @var Application $app */
+echo "2. COMPOSER BERHASIL<br>";
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
-$app->handleRequest(Request::capture());
+echo "3. LARAVEL BERHASIL BOOTSTRAP<br>";
+
+$app->handleRequest(
+    Illuminate\Http\Request::capture()
+);
+
+echo "4. REQUEST SELESAI";
